@@ -1,0 +1,21 @@
+<mat-toolbar class="header">
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span>Teemo</span>
+    <span class="spacer"></span>
+    <button mat-icon-button [routerLink]="['/login']"><mat-icon>input</mat-icon></button>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened="true" class="sidenav" [fixedInViewport]="options.fixed" [fixedTopGap]="options.top" [fixedBottomGap]="options.bottom">
+        <mat-nav-list style="width: 100%; padding-top: 0;">
+            <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="" mat-list-item href="..."> Welcome </a>
+            <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/np-test" mat-list-item href="..."> NpTest </a>
+            <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/about" mat-list-item href="..."> About </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="example-footer">Footer</mat-toolbar>

@@ -17,8 +17,10 @@ export class NavbarComponent implements OnInit {
   setActiveClass(nav: string) {
     if (nav === 'home') {
       this.isActive = 0;
-    } else {
+    } else if (nav === 'link') {
       this.isActive = 1;
+    } else {
+      this.isActive = 2;
     }
   }
 
