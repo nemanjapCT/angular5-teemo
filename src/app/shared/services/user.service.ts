@@ -1,7 +1,9 @@
+
+import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+
 
 import { AuthenticationService } from './authentication.service';
 // import { User } from '../_models/index';
@@ -19,7 +21,7 @@ export class UserService {
     const options = new RequestOptions({ headers: headers });
 
     // get users from api
-    return this.http.get('/api/users', options)
-      .map((response: Response) => response.json());
+    return this.http.get('/api/users', options).pipe(
+      map((response: Response) => response.json()));
   }
 }
